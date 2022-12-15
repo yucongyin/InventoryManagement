@@ -95,23 +95,16 @@ class ProductInventoryList {
     }
 
     public Product getProduct(String serialNumber) {
-
         Node current = this.head;
-
         while (current != null && !current.product.serialNumber.equals(serialNumber)) {
-
             current = current.next;
         }
-
         return current != null ? current.product : null;
     }
 
     public void updateInventory(String serialNumber, int quantity) {
-
         Node current = this.head;
-
         while (current != null && !current.product.serialNumber.equals(serialNumber)) {
-
             current = current.next;
         }
 
@@ -124,19 +117,14 @@ class ProductInventoryList {
 
         Node current = this.head;
         Node previous = null;
-
         while (current != null && !current.product.serialNumber.equals(serialNumber)) {
-
             previous = current;
             current = current.next;
         }
-
         if (current != null) {
             if (previous == null) {
                 this.head = current.next;
-            }
-
-            else {
+            } else {
                 previous.next = current.next;
             }
         }
